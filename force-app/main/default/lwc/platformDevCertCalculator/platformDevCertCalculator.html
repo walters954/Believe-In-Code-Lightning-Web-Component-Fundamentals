@@ -1,3 +1,15 @@
 <template>
-    Is this working?
+    <lightning-card  title="PD1 Calculator">
+        <!-- Process -->
+        <lightning-button variant="brand" label="Calculate" title="Calculate" slot="actions"></lightning-button>
+        <!-- Input information -->
+        <div class="slds-var-p-horizontal_small">
+            <lightning-input type="number" name="devFundamentals" label="Developer Fundamentals: 23%" ></lightning-input>
+            <lightning-input type="number" name="processAuto" label="Process Automation: 30%" ></lightning-input>
+            <lightning-input type="number" name="userInterface" label="User Interface: 25%" ></lightning-input>
+            <lightning-input type="number" name="testDebugDeploy" label="Testing, Debugging, and Deployment: 22%" ></lightning-input>    
+        </div>
+        <!-- Display results -->
+        <p slot="footer">Certification Score: <span style="color:red">50%</span></p>
+    </lightning-card>
 </template>

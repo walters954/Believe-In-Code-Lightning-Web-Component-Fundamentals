@@ -40,6 +40,23 @@
             ></lightning-input>    
         </div>
         <!-- Display results -->
-        <p slot="footer">Certification Score: <span style="color:red">{certificationScore}%</span></p>
+        <div slot="footer">
+            <h1>Certification Results</h1>
+            <p>Certification Score: <span style="color:red;">{certificationScore}%</span></p>
+            <ul>
+                <li>
+                    Resources:
+                </li>
+                <li>
+                    <a href="https://trailhead.salesforce.com/en/credentials/platformdeveloperi">PD1 Exam Guide</a>
+                </li>
+                <li>
+                    <a href="https://focusonforce.com/courses/salesforce-certified-platform-developer-1-exams/">Focus on Force</a>
+                </li>
+                <li>
+                    <a href="https://courses.salesforcementor.com/p/salesforce-development-apex-fundamentals">Salesforce Mentor</a>
+                </li>
+            </ul>
+        </div>
     </lightning-card>
 </template>

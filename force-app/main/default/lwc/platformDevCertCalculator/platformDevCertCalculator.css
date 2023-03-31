@@ -3,17 +3,7 @@
     font-size: xx-large;
 }
 
-.scoreText {
-    color: red;
-    font-size: 18px;
-}
-
-.resourceList{
-    text-align: left;
-    font-size: 16px;
-    padding-top: 10px;
-}
-
-.resourceList li:first-child {
+.resourceLi {
     font-weight: 600;
+    font-size: large;
 }

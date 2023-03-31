@@ -1,0 +1,35 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-layout>
+        <lightning-layout-item padding="around-small">
+            <div class="header-column">
+                <p class="field-title" title="Field 1">Score</p>
+                <p>{score}%</p>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <div class="header-column">
+                <p class="field-title" title="Field 1">Correct Questions</p>
+                <p>{numberOfQuestionsCorrect}</p>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <div class="header-column">
+                <p class="field-title" title="Field 1">Incorrect Questions</p>
+                <p>{numberOfQuestionsIncorrect}</p>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <div class="header-column">
+                <!-- add a lwc button icon delete -->
+                <lightning-button-icon
+                    icon-name="utility:delete"
+                    variant="border-filled"
+                    alternative-text="Delete"
+                    onclick={handleDeleteAttempt}
+                    data-id={attemptId}
+                ></lightning-button-icon>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

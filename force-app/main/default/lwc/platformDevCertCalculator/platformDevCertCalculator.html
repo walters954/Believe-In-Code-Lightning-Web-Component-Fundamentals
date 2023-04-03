@@ -43,7 +43,7 @@
         <div slot="footer">
             <h1 class="slds-text-heading_large slds-text-title_caps resultText">Certification Result</h1>
             <p class="slds-text-heading_medium">Certification Score: <span class="slds-text-color_destructive">{certificationScore}%</span></p>
-            <template if:true={showResources}>
+            <template lwc:if={showResources}>
                 <ul class="slds-text-align_left slds-text-heading_small slds-var-p-top_medium slds-list_dotted slds-box">
                     <li class="resourceLi">
                         Resources:
@@ -59,8 +59,11 @@
                     </li>
                 </ul>
             </template>
-            <template if:false={showResources}>
-                <p> You are ready for your first developer job!</p>
+            <template lwc:elseif={showGoodJob}>
+                <p>You are ready for your first developer job!</p>                
+            </template>
+            <template lwc:else>
+                <p>Press calculate to see your score.</p>
             </template>
         </div> 
     </lightning-card>

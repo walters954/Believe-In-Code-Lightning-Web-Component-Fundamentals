@@ -15,6 +15,7 @@ export default class PlatformDevCertCalculator extends LightningElement {
     certificationScore = 90;
 
     showResources = false;
+    showGoodJob = false;
 
     calculateScore(){
         let devFundWeightScore = this.devFundamentalScore * devFundWeight;
@@ -44,9 +45,10 @@ export default class PlatformDevCertCalculator extends LightningElement {
     showResourceIfFailed(){
         if (this.certificationScore < passingScore){
             this.showResources = true;
+            
         } else {
             this.showResources = false;
         }
-        
+        this.showGoodJob = !this.showResources;
     }
 }

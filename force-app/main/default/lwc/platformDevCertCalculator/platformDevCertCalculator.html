@@ -43,20 +43,25 @@
         <div slot="footer">
             <h1 class="slds-text-heading_large slds-text-title_caps resultText">Certification Result</h1>
             <p class="slds-text-heading_medium">Certification Score: <span class="slds-text-color_destructive">{certificationScore}%</span></p>
-            <ul class="slds-text-align_left slds-text-heading_small slds-var-p-top_medium slds-list_dotted slds-box">
-                <li class="resourceLi">
-                    Resources:
-                </li>
-                <li>
-                    <a href="https://trailhead.salesforce.com/en/credentials/platformdeveloperi">PD1 Exam Guide</a>
-                </li>
-                <li>
-                    <a href="https://focusonforce.com/courses/salesforce-certified-platform-developer-1-exams/">Focus on Force</a>
-                </li>
-                <li>
-                    <a href="https://courses.salesforcementor.com/p/salesforce-development-apex-fundamentals">Salesforce Mentor</a>
-                </li>
-            </ul>
-        </div>
+            <template if:true={showResources}>
+                <ul class="slds-text-align_left slds-text-heading_small slds-var-p-top_medium slds-list_dotted slds-box">
+                    <li class="resourceLi">
+                        Resources:
+                    </li>
+                    <li>
+                        <a href="https://trailhead.salesforce.com/en/credentials/platformdeveloperi">PD1 Exam Guide</a>
+                    </li>
+                    <li>
+                        <a href="https://focusonforce.com/courses/salesforce-certified-platform-developer-1-exams/">Focus on Force</a>
+                    </li>
+                    <li>
+                        <a href="https://courses.salesforcementor.com/p/salesforce-development-apex-fundamentals">Salesforce Mentor</a>
+                    </li>
+                </ul>
+            </template>
+            <template if:false={showResources}>
+                <p> You are ready for your first developer job!</p>
+            </template>
+        </div> 
     </lightning-card>
 </template>

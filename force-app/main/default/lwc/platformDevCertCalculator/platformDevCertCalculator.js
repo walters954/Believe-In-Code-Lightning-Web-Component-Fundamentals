@@ -16,6 +16,13 @@ export default class PlatformDevCertCalculator extends LightningElement {
 
     showResources = false;
 
+    attemptHistory = [
+        {Id: 1, Score:50},
+        {Id: 2, Score:68},
+        {Id: 3, Score:70},
+        {Id: 4, Score:90},
+    ];
+
     calculateScore(){
         let devFundWeightScore = this.devFundamentalScore * devFundWeight;
         let processAutoWeightScore = this.processAutomationScore * processAutoWeight;
@@ -23,7 +30,8 @@ export default class PlatformDevCertCalculator extends LightningElement {
         let testDebugWeightScore = this.testingScore * testDebugWeight;
         this.certificationScore = devFundWeightScore + processAutoWeightScore + userIntWeightScore + testDebugWeightScore;
 
-        this.showResourceIfFailed();        
+        this.showResourceIfFailed();      
+        this.addAttemptHistory(this.certificationScore);  
     }
 
     handleChange(event){
@@ -48,5 +56,13 @@ export default class PlatformDevCertCalculator extends LightningElement {
             this.showResources = false;
         }
         
+    }
+
+    addAttemptHistory(Score){
+        const attempt = 
+            {
+                Id: this.attemptHistory.length + 1, Score
+            }
+        this.attemptHistory = [...this.attemptHistory, attempt];
     }
 }

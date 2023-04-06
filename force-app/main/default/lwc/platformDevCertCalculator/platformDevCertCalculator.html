@@ -48,7 +48,11 @@
                 <lightning-tabset>
                     <div for:each={attemptHistory} for:item="attempt" key={attempt.Id}>
                         <lightning-tab label={attempt.Id}>
-                            <c-score-information></c-score-information>
+                            <c-score-information 
+                                score={attempt.Score}
+                                attempt-id={attempt.Id}
+                                number-of-questions={numberOfQuestions}
+                            ></c-score-information>
                         </lightning-tab>
                     </div>
             </lightning-tabset>

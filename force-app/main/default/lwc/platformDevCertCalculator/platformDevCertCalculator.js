@@ -13,6 +13,7 @@ export default class PlatformDevCertCalculator extends LightningElement {
     testingScore = 50;
 
     certificationScore = 90;
+    numberOfQuestions = 60;
 
     showResources = false;
 

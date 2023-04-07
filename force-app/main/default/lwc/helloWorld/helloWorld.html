@@ -2,8 +2,10 @@
     <div class="slds-text-heading_large">Really Big Text</div>
     <lightning-card title="Hello Globe" icon-name="custom:custom14">
         <div class="slds-var-m-around_medium">
-            <p>Hello, {greeting}!</p>
-            <lightning-input label="Name" value={greeting} onchange={changeHandler}></lightning-input>
-        </div>
+            <lightning-button variant="brand" label="Show Child" title="Looks like a link" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            <template if:true={showChild}>
+                <c-hello-child></c-hello-child>
+            </template>
+        </div>        
     </lightning-card>
 </template>

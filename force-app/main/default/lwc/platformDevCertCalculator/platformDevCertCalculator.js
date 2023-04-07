@@ -17,6 +17,8 @@ export default class PlatformDevCertCalculator extends LightningElement {
 
     showResources = false;
 
+    currentHistoryId = 0;
+
     attemptHistory = [
         {Id: 1, Score:50},
         {Id: 2, Score:68},
@@ -60,9 +62,10 @@ export default class PlatformDevCertCalculator extends LightningElement {
     }
 
     addAttemptHistory(Score){
+        this.currentHistoryId ++;
         const attempt = 
             {
-                Id: this.attemptHistory.length + 1, Score
+                Id: this.currentHistoryId, Score
             }
         this.attemptHistory = [...this.attemptHistory, attempt];
     }
@@ -72,5 +75,9 @@ export default class PlatformDevCertCalculator extends LightningElement {
         let attemptId = event.detail;
         this.attemptHistory = this.attemptHistory.filter(attempt => attempt.Id != attemptId);
         console.log('New attempt history' + this.attemptHistory);
+    }
+
+    connectedCallback() {
+        this.currentHistoryId = this.attemptHistory.length;
     }
 }

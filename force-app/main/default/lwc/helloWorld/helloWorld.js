@@ -7,4 +7,8 @@ export default class HelloWorld extends LightningElement {
     handleClick(event) {
         this.showChild = !this.showChild;
     }
+
+    connectedCallback() {
+        console.log('connectedCallback loaded...' + this.showChild);
+    }
 }

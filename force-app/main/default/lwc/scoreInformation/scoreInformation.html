@@ -18,5 +18,16 @@
                 <p>{numberOfQuestionsIncorrect}</p>
             </div>
         </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <div class="header-column">
+                <lightning-button-icon 
+                    icon-name="utility:delete"    
+                    alternative-text="Delete"   
+                    class="slds-m-left_xx-small" 
+                    title="Delete"
+                    onclick={handleDeleteAttempt}
+                ></lightning-button-icon>
+            </div>
+        </lightning-layout-item>
     </lightning-layout>
 </template>
